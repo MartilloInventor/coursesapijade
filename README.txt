@@ -8,28 +8,36 @@ had been taught by a particular instructor for any term and one route
 that returns all courses taught in a specific area. API routes should
 follow the convention
 
-http://localhost:port/courses/instructor/:name
-http://localhost:port/courses/area/:area
+   http://localhost:port/courses/instructor/:name
+   http://localhost:port/courses/area/:area
 
 so that
 
-http://localhost:port/courses/instructor/na
+   http://localhost:port/courses/instructor/na
 
 returns all courses taught by anyone whose name includes 'na'. This
 should be case insensitive
 
-http://localhost:port/courses/area/CS
+   http://localhost:port/courses/area/CS
 
 returns all courses taught with a course_area of 'CS'
 
 PROBLEM SOLUTION
 
 [Ignore ./installcourseinfo.sh, which is how I set up the solution
-before I integrated it with maven.]
+before I integrated it with maven. Nowadays to create the base github
+repository for an express project, I use express {dirname} to create
+the starting point for my web server project. Then I add a pom.xml
+like the one in this project, import the sources into an Intellij
+project, make the project a maven project, and then use the VCS tab to
+import into the appropriate version control system. At this point one
+can just run mvn clean install either from the command line or through
+the IDE.]
 
-Just clone from the following.
+If one is not starting from scratch and instead is starting from the
+github repository, just clone from the following.
 
-https://github.com/MartilloInventor/coursesapi
+   https://github.com/MartilloInventor/coursesapi
 
 The pom.xml shows one way to integrate node, npm, and maven.
 
@@ -39,17 +47,18 @@ mvn clean install
 npm start
 
 The vanilla app.js has been modified to load the course data from
-Courses.json. (Just search for Courses.json in the file.)
+Courses.json. (Just search for Courses.json in the file to see how to
+load the data.)
 
 The data and the keys array is inserted into the router structures
 area and instructor.
 
-/, /courses/instructor, and /courses/area routes are installed.
+   /, /courses/instructor, and /courses/area routes are installed.
 
 The / route sets up a simple web page that allows a user to choose to
 get instructor or area information by entering the following
 
-localhost:3000/
+   localhost:3000/
 
 into the url entry area of a web browser.
 
@@ -89,12 +98,12 @@ a good understanding of the use of closures in node/javascript.
 
 This URL has a basic discussion of Javascript closures.
 
-http://javascriptissexy.com/understand-javascript-closures-with-ease/
+    http://javascriptissexy.com/understand-javascript-closures-with-ease/
 
 Because I did not write a full front end, to get back to the start
 page, the user must enter
 
-localhost:3000/
+    localhost:3000/
 
 in the url entry area of a web browser to get back to the start page
 of the web server.
