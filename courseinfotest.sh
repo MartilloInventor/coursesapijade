@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 echo curl 'http://localhost:3000/courses/area/Cs' -H 'Content-Type: application/json'
 curl 'http://localhost:3000/courses/area/Cs' -H 'Content-Type: application/json'
 echo ""
