@@ -3,6 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 
+/*
 router.get('/', function(req, res, next) {
     res.send(
         '<html>' +
@@ -25,6 +26,19 @@ router.get('/', function(req, res, next) {
             '</body>' +
             '</html>');
 });
+*/
+
+router.get('/', function (req, res, next) {
+    res.render('area', {title: 'Get Area Info Page'}, function (err, html) {
+        if (err != null) {
+            console.log(err);
+        } else {
+            console.log(html);
+            res.send(html);
+        }
+    });
+});
+
 
 router.get('/:areaname', function(req, res, next) {
     var coursearray = [];

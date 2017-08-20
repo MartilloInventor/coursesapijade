@@ -1,0 +1,12 @@
+extends layout
+block content
+    script(language="javascript", type="text/javascript").
+        var person = prompt("Please enter area name", "");
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function () {
+            if (xmlHttp.readyState == XMLHttpRequest.DONE)
+                document.write(xmlHttp.responseText);
+        };
+        xmlHttp.open("GET", "area/" + person, true);
+        xmlHttp.send(null);
+    p Received Get area
